@@ -15,8 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::loginUsingId(1);
-
 Route::group(['middleware' => ['web']], function () {
     Route::get('documents/{document}', 'DocumentsController@show');
+    Route::get('lessons', 'LessonsController@index');
 });
