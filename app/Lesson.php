@@ -10,4 +10,16 @@ class Lesson extends Model
     {
         return $filters->apply($query);
     }
+
+    /**
+     * Scope query to given beginner lessons
+     *
+     * @param  Builder $query
+     *
+     * @return Builder
+     */
+    public function scopeBeginner($query)
+    {
+        return $query->where('difficulty', 'beginner');
+    }
 }

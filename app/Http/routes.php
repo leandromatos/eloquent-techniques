@@ -18,4 +18,5 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     Route::get('documents/{document}', 'DocumentsController@show');
     Route::get('lessons', 'LessonsController@index');
+    Route::get('lessons/beginners', 'LessonsController@beginners');
 });
